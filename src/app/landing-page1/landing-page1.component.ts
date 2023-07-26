@@ -8,7 +8,7 @@ import {NgForm} from '@angular/forms';
 import { MoreUser } from '../more-user';
 import { UserService } from '../user.service';
 import { HttpErrorResponse } from '@angular/common/http';
-
+//import java.time.LocalDate;
 
 
 @Component({
@@ -21,19 +21,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 // goBackToMainPage() {
 // throw new Error('Method not implemented.');
 // }
-// calculateAge(dateOfBirth: Date): number {
-//   const today = new Date();
-//   const birthDate = new Date(dateOfBirth);
 
-//   let age = today.getFullYear() - birthDate.getFullYear();
-//   const monthDiff = today.getMonth() - birthDate.getMonth();
-
-//   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-//     age--;
-//   }
-
-//   return age;
-// }
 // onSubmit(form: NgForm) {
 //   // Get the form values
 //   const dateOfBirth = form.value.dateOfBirth;
@@ -65,6 +53,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 
 export class LandingPage1Component implements OnInit {
+  calculateAge(dateOfBirth: string): number {
+    const today = new Date();
+    const birthDate = new Date(dateOfBirth);
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
   formData: any = {};
 
   ngOnInit(): void {
@@ -78,8 +80,12 @@ export class LandingPage1Component implements OnInit {
   });
   
   onSubmit(addForm: NgForm): void {
+    if(this.formData.annualSalary < 10000 || (this.formData.experienceYears == 0 && this.formData.experienceMonths < 6)
+         || this.calculateAge(this.formData.dob) < 18 ||  this.calculateAge(this.formData.dob) > 65) {
+      alert('Sorry');
+    }
 
-    if (addForm.valid) {
+    else if (addForm.valid) {
       // Perform the form submission when all required fields are filled
       // e.g., this.userService.updateUserData(this.user).subscribe(...)
       this.userService.addUser(this.formData).subscribe(
@@ -94,7 +100,9 @@ export class LandingPage1Component implements OnInit {
           
         }
       );
-    } else {
+    }
+    
+    else {
       // Form is not valid, handle the case where required fields are missing
       alert('Please fill all required fields before submitting.');
     }

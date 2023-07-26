@@ -6,11 +6,11 @@ export interface MoreUser{
 
     lastName: string;
 
-    dob: string;
+    dob: String;
 
     maritalStatus: string;
 
-    ssn: string;
+    ssn: String;
 
     loanAmount: number;
 

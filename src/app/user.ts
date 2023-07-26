@@ -5,7 +5,7 @@ export interface User{
 
     lastName: string;
 
-    dob: string;
+    dob: String;
 
     maritalStatus: string;
 
