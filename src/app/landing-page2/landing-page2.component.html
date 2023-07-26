@@ -1,0 +1,65 @@
+<nav>
+  <a routerLink="">Main Page</a>
+
+  <!-- <a routerLink="/landing-page1">Landing Page 1</a> -->
+  <!-- <a routerLink="/landing-page2">Landing Page 2</a> -->
+</nav>
+<router-outlet></router-outlet>
+<!-- import { MatTableDataSource } from '@angular/material/table';
+
+<nav>
+    <a routerLink="">Main Page</a>
+
+     <a routerLink="/landing-page1">Landing Page 1</a> -->
+    <!-- <a routerLink="/landing-page2">Landing Page 2</a> -->
+<!-- </nav>
+<router-outlet></router-outlet>
+<h2>Submitted Applications</h2>
+
+<table mat-table [moreusers] = "moreusers" class = "mat-elevation-z8"> 
+    <ng-container matColumnDef = "Application_id">
+       <th mat-header-cell *matHeaderCellDef> Application_id</th>
+       <td mat-cell *matCellDef = "let element"> 
+         <a [routerLink]="['/landing-page2', element.application_id]">{{element.Application_id}} </a>
+
+         </td>
+    </ng-container>
+    <ng-container matColumnDef = "Applicant_name">
+       <th mat-header-cell *matHeaderCellDef>Applicant_name</th>
+       <td mat-cell *matCellDef = "let element"> {{element.Applicant_name}} </td>
+    </ng-container>
+    <ng-container matColumnDef = "Submitted_date">
+       <th mat-header-cell *matHeaderCellDef>Submitted_date</th>
+       <td mat-cell *matCellDef = "let element"> {{element.Submitted_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef = "Status">
+       <th mat-header-cell *matHeaderCellDef>Status</th>
+       <td mat-cell *matCellDef = "let element"> {{element.Status}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
+    <tr mat-row *matRowDef = "let row; columns: displayedColumns;"></tr>
+ </table>  -->
+
+ <table>
+   <thead>
+     <tr>
+       <th>Application_id</th>
+       <th>Applicant_name</th>
+       <th>Submitted_date</th>
+       <th>Status</th>
+       <!-- Add more columns for other user properties if needed -->
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let user of moreusers">
+       <td>
+         <a [routerLink]="['/landing-page2', user.id]">{{user.id}} </a>
+       </td>
+       <td>{{ user.firstName }}</td>
+       <td>{{ user.ssn }}</td>
+       <td>{{ user.status }}</td>
+       <!-- Add more <td> elements for other user properties if needed -->
+     </tr>
+   </tbody>
+ </table>
+ 

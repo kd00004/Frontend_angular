@@ -1,0 +1,56 @@
+<!-- <div>
+
+    <h1>Data from Server:</h1>
+
+    <ul>
+
+      <li *ngFor="let item of data">{{ item.name }}</li>
+
+    </ul>
+
+</div> -->
+
+<nav>
+
+    <!-- <a routerLink="">Main Page</a> -->
+
+
+
+
+    <!-- <a routerLink="/landing-page1">Landing Page 1</a> -->
+
+    <a routerLink="/landing-page2">Back</a>
+
+</nav>
+
+<section>
+
+    <h2>View Application</h2>
+
+    <div *ngIf="moreuser; else noApplication">
+
+      <p><strong>Application ID:</strong> {{ moreuser.id }}</p>
+
+      <p><strong>Status:</strong> {{ moreuser.status }}</p>
+
+      <p><strong>Score:</strong> {{ moreuser.score }}</p>
+
+      <p><strong>Reason:</strong> {{ moreuser.reason }}</p>
+
+    </div>
+
+    <ng-template #noApplication>
+
+      <p>No application data found with ID 1.</p>
+
+    </ng-template>
+
+  </section>
+
+  <hr>
+
+  <div>
+
+    <h3>Original Application</h3>
+
+  </div>

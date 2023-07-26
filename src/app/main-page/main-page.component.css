@@ -1,0 +1,20 @@
+
+.custom-line {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+Styles for the landing page links
+a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+  /* Apply additional margin to the first landing page link */
+a.landing-page-link {
+    margin-bottom: 10px;
+}
+
+.vertical-space {
+    margin-bottom: 20px; /* Adjust the margin value as needed */
+}
