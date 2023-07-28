@@ -1,3 +1,5 @@
+import { Text } from "@angular/compiler";
+
 export interface MoreUser{
     id : number;
     firstName: string;
@@ -16,7 +18,7 @@ export interface MoreUser{
 
     loanPurpose: string;
 
-    description: string;
+    description: String;
 
     addressLine1: string;
 

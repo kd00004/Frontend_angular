@@ -1,138 +1,119 @@
-/* Styles for the landing page container */
-:host {
-    display: block;
-    margin: 20px;
-  }
-  
-  .submit-button{
-    margin-top: 40px;
-  }
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Styles for the form container and sections */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Style for the navigation menu */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  color: #f0f0f0;
+}
+
+/* Style for the form container */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+/* Style for each form section */
+.form-section {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+/* Style for form labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for form inputs and select elements */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for form inputs on focus */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+/* Style for the fieldset and legend */
+fieldset {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 25px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: Add more styles as needed */
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 400px) {
   .form-container {
-    display: flex;
-    justify-content: space-between;
-    /* min-height: 150vh; Set the minimum height of the container to full viewport height */
-  
+    flex-direction: column;
   }
-  
+
   .form-section {
-    flex: 1;
-    max-width: 48%; /* Adjust the width of the columns as needed */
+    max-width: 100%;
   }
-  
-  form {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form div {
-    margin-bottom: 15px;
-  }
-  #Address {
-      border: 1px solid #d8d7d7;
-      border-radius: 5px;
-      padding: 10px; /* Adjust the padding as needed */
-      max-width: 550px; /* Adjust the maximum width of the fieldset */
-    }
-    
-    legend {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  
-    #Contact-information {
-      border: 1px solid #d8d7d7;
-      border-radius: 5px;
-      padding: 10px; /* Adjust the padding as needed */
-      max-width: 550px; /* Adjust the maximum width of the fieldset */
-    }
-    
-    legend {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  
-    #Employment-details {
-      border: 1px solid #d8d7d7;
-      border-radius: 5px;
-      padding: 10px; /* Adjust the padding as needed */
-      max-width: 550px; /* Adjust the maximum width of the fieldset */
-    }
-    
-    legend {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  
-    /* Styles for the "Experience" section */
-  .experience-inputs {
-      display: flex;
-      align-items: center;
-  }
-  
-  .experience-inputs input {
-      width: 60px; /* Adjust the width as needed */
-      margin-right: 5px;
-  }
-  
-  .experience-inputs span {
-      margin-right: 10px;
-  }
-  
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],
-  textarea,
-  select {
-    width: 70%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  select {
-    appearance: none;
-    background: url('data:image/svg+xml;charset=utf-8,%3Csvg fill%3D%22%23cccccc%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20352%20480%22%3E%3Cpath d%3D%22M176%20480L0%200h352L176%20480zm176-288H0v32h352v-32zM0%20176h352v-32H0v32z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center/20px 20px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* Submit button styles */
-  .submit-button {
-      position: fixed;
-      bottom: 20px; /* Adjust the distance from the bottom as needed */
-      right: 20px; /* Adjust the distance from the right as needed */
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  }
-  
-  /* Responsive styles for small screens */
-  @media screen and (max-width: 400px) {
-    .form-container {
-      flex-direction: column;
-    }
-  
-    .form-section {
-      max-width: 100%;
-    }
-  }
-  
+}
+
+#description {
+  width: 100%;
+}

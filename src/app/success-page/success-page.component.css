@@ -24,3 +24,51 @@
     margin-left: 5px;
 
 }
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the "Home" button */
+  .my-button,
+  .my-button1 {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* Style for the "Home" button */
+  .my-button {
+    background-color: #007bff;
+  }
+  
+  /* Style for the "View Applications" button */
+  .my-button1 {
+    background-color: #28a745;
+  }
+  
+  /* Hover effect for both buttons */
+  .my-button:hover,
+  .my-button1:hover {
+    opacity: 0.8;
+  }
+  
