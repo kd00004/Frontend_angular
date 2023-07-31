@@ -1,220 +1,61 @@
-
-
 <nav>
-
     <a routerLink="/landing-page2">Back</a>
-
 </nav>
 
 <section>
-
     <h2>View Application</h2>
-
     <div *ngIf="moreuser; else noApplication">
-
       <p><strong>Application ID:</strong> {{ moreuser.id }}</p>
-
       <p><strong>Status:</strong> {{ moreuser.status }}</p>
-
       <p><strong>Score:</strong> {{ moreuser.score }}</p>
-
       <p><strong>Reason:</strong> {{ moreuser.reason }}</p>
-
     </div>
 
     <ng-template #noApplication>
-
       <p>No application data found with ID 1.</p>
-
     </ng-template>
-
-  </section>
+</section>
 
   <hr>
 
   <div>
-
     <h3>Original Application</h3>
-
-    <!-- <p>First Name: {{moreuser.firstName}}</p>
-    <p>Middle Name: {{moreuser.middleName}}</p>
-    <p>Last Name: {{moreuser.lastName}}</p>
-    <p>Date of Birth: {{moreuser.dob}}</p>
-    <p>Marital Status: {{moreuser.maritalStatus}}</p>
-    <p>SSN Number : {{moreuser.ssn}}</p>
-    <p>Loan Amount : {{moreuser.loanAmount}}</p>
-    <p>Loan Purpose : {{moreuser.loanPurpose}}</p>
-    <p>Description : {{moreuser.description}}</p>
-    <p>Address Line 1 : {{moreuser.addressLine1}}</p>
-    <p>City : {{moreuser.city}}</p>
-    <p>State : {{moreuser.state}}</p>
-    <p>Postal Code : {{moreuser.postalCode}}</p>
-    <p>Home Phone : {{moreuser.homePhone}}</p>
-    <p>Office Phone : {{moreuser.officePhone}}</p>
-    <p>Mobile : {{moreuser.mobileNumber}}</p>
-    <p>Email Address : {{moreuser.email}}</p>
-    <p>Employer Name : {{moreuser.employerName}}</p>
-    <p>Annual Salary : {{moreuser.annualSalary}}</p>
-    <p>Experience Years : {{moreuser.experienceYears}}</p>
-    <p>Experience Months : {{moreuser.experienceMonths}}</p>
-    <p>Designation : {{moreuser.designation}}</p>
-    <p>Employer AddressLine 1 : {{moreuser.employerAddressLine1}}</p>
-    <p>Employer AddressLine 2 : {{moreuser.employerAddressLine2}}</p>
-    <p>Employer City : {{moreuser.employerCity}}</p>
-    <p>Employer State : {{moreuser.employerState}}</p>
-    <p>Employer Postal Code : {{moreuser.employerPostalCode}}</p> -->
-
-    <form>
-
+   
     <div class="form-container">
-
       <div class="form-section">
-    
-      <!-- First Name -->
-    
+
       <p>First Name: {{moreuser.firstName}}</p>
-  
-      <!-- Middle Name -->
       <p>Middle Name: {{moreuser.middleName}}</p>
-    
-      <!-- Last Name -->
-    
       <p>Last Name: {{moreuser.lastName}}</p>
-
-    
-      <!-- Date of Birth -->
-    
       <p>Date of Birth: {{moreuser.dob}}</p>
-
-    
-      <!-- Marital Status -->
-    
       <p>Marital Status: {{moreuser.maritalStatus}}</p>
-    
-      <!-- SSN Number -->
-    
       <p>SSN Number : {{moreuser.ssn}}</p>
-
-    
-      <!-- Loan Amount -->
-    
       <p>Loan Amount : {{moreuser.loanAmount}}</p>
-
-    
-      <!-- Loan Purpose -->
-    
       <p>Loan Purpose : {{moreuser.loanPurpose}}</p>
-
-    
-      <!-- Description -->
-    
       <p>Description : {{moreuser.description}}</p>
-
-    
-      <!-- Address - Line 1 -->
-    
       <p>Address Line 1 : {{moreuser.addressLine1}}</p>
-
-    
-        <!-- Address - Line 2 -->
-    
         <p>Address Line 2 : {{moreuser.addressLine2}}</p>
-
-        <!-- City -->
-    
         <p>City : {{moreuser.city}}</p>
-
-    
-        <!-- State -->
-    
         <p>State : {{moreuser.state}}</p>
-
-    
-        <!-- Postal Code -->
-    
         <p>Postal Code : {{moreuser.postalCode}}</p>
-    
-
-
-      <div class="form-section">
-
-      <!-- Home Phone -->
-    
-          <p>Home Phone : {{moreuser.homePhone}}</p>
-    
-      <!-- Office Phone -->
-    
-      <p>Office Phone : {{moreuser.officePhone}}</p>
-
-    
-    
-    
-      <!-- Mobile Number -->
-    
-      <p>Mobile : {{moreuser.mobileNumber}}</p>
-    
-      <!-- Email Address -->
-    
-      <p>Email Address : {{moreuser.email}}</p>
-
-      
-    
-      <!-- Employer Name -->
-    
-      <p>Employer Name : {{moreuser.employerName}}</p>
-
-    
-    
-      <!-- Annual Salary -->
-    
-      <p>Annual Salary : {{moreuser.annualSalary}}</p>
-
-    
-      <!-- Work experience-->
-    
-      <p>Experience Years : {{moreuser.experienceYears}}</p>
-      <p>Experience Months : {{moreuser.experienceMonths}}</p>
-    
-      <!-- Designation -->
-    
-      <p>Designation : {{moreuser.designation}}</p>
-
-    
-    
-      <!-- Employer - Address - Line 1 -->
-    
-      <p>Employer AddressLine 1 : {{moreuser.employerAddressLine1}}</p>
-
-    
-    
-      <!-- Employer - Address - Line 2 -->
-    
-      <p>Employer AddressLine 2 : {{moreuser.employerAddressLine2}}</p>
-
-    
-      <!-- Employer - City -->
-    
-      <p>Employer City : {{moreuser.employerCity}}</p>
-
-    
-    
-      <!-- Employer - State -->
-    
-      <p>Employer State : {{moreuser.employerState}}</p>
-
-    
-    
-      <!-- Employer - Postal Code -->
-    
-      <p>Employer Postal Code : {{moreuser.employerPostalCode}}</p>
-
-    
       </div>
     
-      
-    
+      <div class="form-section">
+          <p>Home Phone : {{moreuser.homePhone}}</p>
+      <p>Office Phone : {{moreuser.officePhone}}</p>
+      <p>Mobile : {{moreuser.mobileNumber}}</p>
+      <p>Email Address : {{moreuser.email}}</p>
+      <p>Employer Name : {{moreuser.employerName}}</p>
+      <p>Annual Salary : {{moreuser.annualSalary}}</p>
+      <p>Experience Years : {{moreuser.experienceYears}}</p>
+      <p>Experience Months : {{moreuser.experienceMonths}}</p>
+      <p>Designation : {{moreuser.designation}}</p>
+      <p>Employer AddressLine 1 : {{moreuser.employerAddressLine1}}</p>
+      <p>Employer AddressLine 2 : {{moreuser.employerAddressLine2}}</p>
+      <p>Employer City : {{moreuser.employerCity}}</p>
+      <p>Employer State : {{moreuser.employerState}}</p>
+      <p>Employer Postal Code : {{moreuser.employerPostalCode}}</p>
+      </div>
     </div>
-
-
   </div>
-</form>
+

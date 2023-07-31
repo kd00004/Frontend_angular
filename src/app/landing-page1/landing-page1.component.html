@@ -1,238 +1,106 @@
 <nav>
-
   <a routerLink="">Main Page</a>
-
-
-
-
-  <!-- <a routerLink="/landing-page1">Landing Page 1</a> -->
-
-  <!-- <a routerLink="/landing-page2">Landing Page 2</a> -->
-
 </nav>
 
 <router-outlet></router-outlet>
 
-
-
-
 <h2>Submit Application</h2>
-
-
 
 <form  #addForm="ngForm" (ngSubmit)="onSubmit(addForm)" novalidate>
   
 <div class="form-container">
-
   <div class="form-section">
 
-  <!-- First Name -->
-
+    
   <div>
-
     <label for="firstName">First Name: *</label>
-
     <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="formData.firstName" required  maxlength="255" >
-
-
   </div>
 
-
-  <!-- Middle Name -->
-
   <div>
-
     <label for="middleName">Middle Name:</label>
-
     <input type="text" id="middleName" name="middleName" [(ngModel)]="formData.middleName" maxlength="255"  >
-
   </div>
 
-
-
-  <!-- Last Name -->
-
   <div>
-
     <label for="lastName">Last Name: *</label>
-
     <input type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required maxlength="255">
-
   </div>
 
-
-
-  <!-- Date of Birth -->
-
   <div>
-
     <label for="dob">Date of Birth: *</label>
-
     <input type="date" id="dob" name="dob" [(ngModel)]="formData.dob" required >
-
   </div>
 
-
-
-  <!-- Marital Status -->
-
   <div>
-
     <label for="maritalStatus">Marital Status: *</label>
-
     <select id="maritalStatus" name="maritalStatus" [(ngModel)]="formData.maritalStatus" required>
-
       <option value="Single">Single</option>
-
       <option value="Married">Married</option>
-
       <option value="Separated">Separated</option>
-
       <option value="Divorced">Divorced</option>
-
       <option value="Widowed">Widowed</option>
-
     </select>
-
   </div>
 
-
-
-  <!-- SSN Number -->
-
   <div>
-
     <label for="ssn">SSN Number: *</label>
-
     <input type="text" id="ssn" name="ssn" [(ngModel)]="formData.ssn" required >
-
   </div>
 
-
-
-  <!-- Loan Amount -->
-
   <div>
-
     <label for="loanAmount">Loan Amount: *</label>
-
     <input type="number" id="loanAmount" name="loanAmount" [(ngModel)]="formData.loanAmount" required  >
-
   </div>
 
-
-
-  <!-- Loan Purpose -->
-
   <div>
-
     <label for="loanPurpose">Loan Purpose: *</label>
-
     <select id="loanPurpose" name="loanPurpose" [(ngModel)]="formData.loanPurpose" required >
-
       <option value="Debt">Debt</option>
-
       <option value="Educational Loan">Educational Loan</option>
-
       <option value="Personal Loan">Personal Loan</option>
-
       <option value="Home Loan">Home Loan</option>
-
     </select>
-
   </div>
 
-
-
-  <!-- Description -->
-
   <div>
-
     <label for="description">Description:</label>
-
     <textarea id="description" name="description" rows="4" cols="50" [(ngModel)]="formData.description"></textarea>
-
   </div>
-
-
-
-
+  
   <fieldset id="Address" name="Address">
-
       <legend>Address</legend>
-
-  <!-- Address - Line 1 -->
-
-  <div>
-
+    <div>
       <label for="addressLine1">Address - Line 1: *</label>
-
       <input type="text" id="addressLine1" name="addressLine1" [(ngModel)]="formData.addressLine1" required maxlength="255" >
-
     </div>
 
-  
-
-    <!-- Address - Line 2 -->
-
     <div>
-
       <label for="addressLine2">Address - Line 2:</label>
-
       <input type="text" id="addressLine2" name="addressLine2" maxlength="255" >
-
     </div>
 
-  
-
-    <!-- City -->
-
     <div>
-
       <label for="city">City: *</label>
-
       <input type="text" id="city" name="city" [(ngModel)]="formData.city" required maxlength="255"  >
-
     </div>
 
-  
-
-    <!-- State -->
-
     <div>
-
       <label for="state">State: *</label>
-
       <input type="text" id="state" name="state" [(ngModel)]="formData.state" required maxlength="255"  >
-
     </div>
 
-  
-
-    <!-- Postal Code -->
-
     <div>
-
       <label for="postalCode">Postal Code: *</label>
-
       <input type="text" id="postalCode" name="postalCode" [(ngModel)]="formData.postalCode" required pattern="[0-9]{5}" >
-
     </div>
 
   </fieldset>
-
-  
-
   </div>
 
-
-
-
-  <div class="form-section">
-
+<div class="form-section">
   <fieldset id="contactInformation" name="contactInformation">
     <legend>Contact Information</legend>
-
     <div>
       <label for="homePhone">Home Phone: *</label>
       <input type="text" id="homePhone" name="homePhone" [(ngModel)]="formData.homePhone" required
@@ -256,127 +124,58 @@
     </div>
   </fieldset>
 
-  
-
-  <!-- Employer Name -->
-
   <div>
-
     <label for="employerName">Employer name: *</label>
-
     <input type="text" id="employerName" name="employerName" [(ngModel)]="formData.employerName" required maxlength="255"  >
-
   </div>
 
-
-
-  <!-- Annual Salary -->
-
   <div>
-
     <label for="annualSalary">Annual Salary: *</label>
-
     <input type="number" id="annualSalary" name="annualSalary" [(ngModel)]="formData.annualSalary" required  >
-
   </div>
 
-  <!-- Work experience-->
-
   <div>
-
         <label for="workExperience">Work Experience: *</label>
-
         <div class="experience-inputs">
-
+          <span>Years: *</span>
           <input type="number" id="experienceYears" name="experienceYears" [(ngModel)]="formData.experienceYears" required >
-
-          <span>Years</span>
-
+          <span>Months: *</span>
           <input type="number" id="experienceMonths" name="experienceMonths" [(ngModel)]="formData.experienceMonths" required  >
-
-          <span>Months</span>
-
+          
         </div>
-
-      </div>
-
-  <!-- Designation -->
+  </div>
 
   <div>
-
     <label for="designation">Designation:</label>
-
     <input type="text" id="designation" name="designation" maxlength="255"  >
-
   </div>
 
-
-
-  <!-- Employer - Address - Line 1 -->
-
   <div>
-
     <label for="employerAddressLine1">Employer - Address - Line 1: *</label>
-
     <input type="text" id="employerAddressLine1" name="employerAddressLine1" [(ngModel)]="formData.employerAddressLine1" required maxlength="255"  >
-
   </div>
 
-
-
-  <!-- Employer - Address - Line 2 -->
-
   <div>
-
     <label for="employerAddressLine2">Employer - Address - Line 2:</label>
-
     <input type="text" id="employerAddressLine2" name="employerAddressLine2" maxlength="255"  >
-
   </div>
 
-
-
-  <!-- Employer - City -->
-
   <div>
-
     <label for="employerCity">Employer - City: *</label>
-
       <input type="text" id="employerCity" name="employerCity" [(ngModel)]="formData.employerCity" required maxlength="255"  >
-
   </div>
 
-
-
-
-  <!-- Employer - State -->
-
   <div>
-
         <label for="employerState">Employer - State: *</label>
-
         <input type="text" id="employerState" name="employerState" [(ngModel)]="formData.employerState" required maxlength="255" >
-
   </div>
-
-
-
-
-  <!-- Employer - Postal Code -->
 
   <div>
-
         <label for="employerPostalCode">Employer - Postal Code: *</label>
-
         <input type="text" id="employerPostalCode" name="employerPostalCode" [(ngModel)]="formData.employerPostalCode" required pattern="[0-9]{5}" >
-
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
-
   </div>
-
-  
 
 </div>
 

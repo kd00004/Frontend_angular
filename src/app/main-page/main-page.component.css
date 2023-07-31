@@ -1,29 +1,5 @@
-
-.custom-line {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-Styles for the landing page links
-a {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-  /* Apply additional margin to the first landing page link */
-a.landing-page-link {
-    margin-bottom: 10px;
-}
-
-.vertical-space {
-    margin-bottom: 20px; /* Adjust the margin value as needed */
-}
-/* Global styles */
-body {
+ body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
   }
   
   h1 {
@@ -31,21 +7,18 @@ body {
     font-size: 36px;
     margin-top: 30px;
   }
-  
-  /* Style for the custom line */
+
   .custom-line {
     width: 100%;
     height: 1px;
     background-color: #ccc;
     margin: 20px 0;
   }
-  
-  /* Style for the paragraph content */
+
   p {
     margin-bottom: 20px;
   }
   
-  /* Style for the navigation menu */
   nav {
     background-color: #333;
     padding: 10px;
@@ -64,9 +37,9 @@ body {
     background-color: #007bff;
   }
   
-  /* Style for the vertical space between links */
   .vertical-space {
     height: 10px;
-    width: 100%;
+    width: 10%;
+    margin-bottom: 20px;
   }
   

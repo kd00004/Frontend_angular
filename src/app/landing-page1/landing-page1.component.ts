@@ -1,56 +1,14 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormsModule, FormControl } from '@angular/forms';
-import { User } from '../user';
-import { ReactiveFormsModule } from '@angular/forms'; // Import the ReactiveFormsModule
-import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {NgForm} from '@angular/forms';
-import { MoreUser } from '../more-user';
 import { UserService } from '../user.service';
-import { HttpErrorResponse } from '@angular/common/http';
-//import java.time.LocalDate;
 
-
-@Component({
-
-  selector: 'app-landing-page1',
+@Component({ // defines meta data for the component
+  selector: 'app-landing-page1', //HTML tag that is used to represent the landing page
   templateUrl: './landing-page1.component.html',
   styleUrls: ['./landing-page1.component.css']
 })
-
-// goBackToMainPage() {
-// throw new Error('Method not implemented.');
-// }
-
-// onSubmit(form: NgForm) {
-//   // Get the form values
-//   const dateOfBirth = form.value.dateOfBirth;
-//   const age = this.calculateAge(dateOfBirth);
-//   const experienceMonths = form.value.experienceMonths;
-//   const annualSalary = form.value.annualSalary;
-
-//   // Perform the frontend decline rules
-//   if (age < 18 || age > 65) {
-//     alert('Applicant must be between 18 and 65 years old.');
-//     return;
-//   }
-
-//   if (experienceMonths < 6) {
-//     alert('Applicant must have at least 6 months of work experience.');
-//     return;
-//   }
-
-//   if (annualSalary < 10000) {
-//     alert('Applicant annual salary must be at least $10,000.');
-//     return;
-//   }
-
-  // If all rules pass, you can proceed with form submission or other actions.
-  // For example:
-  //console.log('Form submission successful!');
-  // ...
-//}
-
 
 export class LandingPage1Component implements OnInit {
   calculateAge(dateOfBirth: string): number {
@@ -63,14 +21,13 @@ export class LandingPage1Component implements OnInit {
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
-
     return age;
-}
+  }
 
   formData: any = {};
 
   ngOnInit(): void {
-      
+      // no specific initialization logic needs to be executed
   }
 
   constructor(private formBuilder: FormBuilder, private router : Router, private userService: UserService) {}
@@ -80,14 +37,24 @@ export class LandingPage1Component implements OnInit {
   });
   
   onSubmit(addForm: NgForm): void {
-    if(this.formData.annualSalary < 10000 || (this.formData.experienceYears == 0 && this.formData.experienceMonths < 6)
-         || this.calculateAge(this.formData.dob) < 18 ||  this.calculateAge(this.formData.dob) > 65) {
-      alert('Sorry');
+
+    if(this.formData.annualSalary < 10000){
+      alert('Sorry, your salary is less.');
+    }
+
+    else if(this.formData.experienceYears == 0 && this.formData.experienceMonths < 6){
+      alert('Sorry, You don\'t have enough experience. ')
+    }
+
+    else if(this.calculateAge(this.formData.dob) < 18){
+      alert('Sorry, you should be atleast 18 to avail loan.')
+    }
+
+    else if(this.calculateAge(this.formData.dob) > 65){
+      alert('Sorry, you should be less than 65 to avail loan.')
     }
 
     else if (addForm.valid) {
-      // Perform the form submission when all required fields are filled
-      // e.g., this.userService.updateUserData(this.user).subscribe(...)
       this.userService.addUser(this.formData).subscribe(
         (response) => {
           console.log(response);
@@ -96,24 +63,13 @@ export class LandingPage1Component implements OnInit {
         },
         (error) => {
           console.log(error);
-          alert('Form submission failed');
+          alert('Form submission failed.');
           
         }
       );
     }
-    
     else {
-      // Form is not valid, handle the case where required fields are missing
       alert('Please fill all required fields before submitting.');
     }
-      
-      
-    }
   }
-
-
-
- 
-
-
-
+  }
